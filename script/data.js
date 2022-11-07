@@ -5,12 +5,31 @@ export const config = {
     bcHeight: 720,
 }
 
-export const backgroundLayers = []
-
-for (let i = 1; i <= 5; i++) {
+const getImage = (src) => {
     const image = new Image();
-    image.src = `../media/background/layer-${i}.png`;
-
-    backgroundLayers.push(image);
+    image.src = src;
+    return image;
 }
 
+export const backgroundLayers = [
+    {
+        image : getImage(`../media/background/layer-1.png`),
+        speedModifier: 0.6
+    },
+    {
+        image : getImage(`../media/background/layer-2.png`),
+        speedModifier: 0.8
+    },
+    {
+        image : getImage(`../media/background/layer-3.png`),
+        speedModifier: 1.0
+    },
+    {
+        image : getImage(`../media/background/layer-4.png`),
+        speedModifier: 1.2
+    },
+    {
+        image : getImage(`../media/background/layer-5.png`),
+        speedModifier: 1.4
+    },
+]
