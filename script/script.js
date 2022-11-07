@@ -7,10 +7,11 @@ import {speedController} from "./SpeedController.js";
 const canvas = document.getElementById('canvas1');
 const canvasContext = canvas.getContext('2d');
 
-const button = document.getElementById("clickMe");
+const slider = document.getElementById("slider");
+speedController.speed = slider.value;
 
-button.addEventListener("click", () => {
-    speedController.speed += 10
+slider.addEventListener("input", () => {
+    speedController.speed = slider.value;
 })
 
 canvas.width = config.canvasWidth;
