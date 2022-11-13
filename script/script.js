@@ -9,6 +9,7 @@ const canvasContext = canvas.getContext('2d');
 
 const slider = document.getElementById("slider");
 const showGameSpeed = document.getElementById('showGameSpeed');
+
 speedController.speed = slider.value;
 showGameSpeed.innerText = speedController.speed.toString();
 
@@ -21,7 +22,7 @@ canvas.width = config.canvasWidth;
 canvas.height = config.canvasHeight;
 
 const layers = backgroundLayers.map((layer) => {
-    return new Layer(layer.image, layer.speedModifier, config.bcWidth);
+    return new Layer(layer.image, layer.speedModifier);
 })
 
 window.addEventListener('load', () => {
